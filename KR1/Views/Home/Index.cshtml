@@ -1,0 +1,56 @@
+﻿@model IEnumerable<KR1.Models.Application>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Заявки</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Дата рождения</th>
+            <th>Пол</th>
+            <th>Адрес</th>
+            <th>Номер телефона</th>
+            <th>Почта</th>
+            <th>Дата заявки</th>
+            <th>Статус</th>
+        </tr>
+        @foreach (var application in Model)
+        {
+            <tr>
+                <td>@application.ID</td>
+                <td>@application.FirstName</td>
+                <td>@application.LastName</td>
+                <td>@application.DateOfBirth.ToString("yyyy-MM-dd")</td>
+                <td>@application.Gender</td>
+                <td>@application.Address</td>
+                <td>@application.PhoneNumber</td>
+                <td>@application.Email</td>
+                <td>@application.ApplicationDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>@application.Status</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
