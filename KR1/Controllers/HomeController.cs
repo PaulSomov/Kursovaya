@@ -23,13 +23,18 @@ namespace KR1.Controllers
             return View();
         }
         [HttpPost]
-        public string Create_New_Application(Application application)
+        public IActionResult Create_New_Application(Application application)
         {
             application.ApplicationDate = DateTime.Now;
             application.Status = "New";
             db.Applications.Add(application);
             db.SaveChanges();
-            return "Заявка на имя " + application.FirstName.ToString() +" "+application.LastName.ToString() + ", успешно внесена в базу данных!";
+            return Redirect("/Home/Index/");
+        }
+
+        private void Alert(string v)
+        {
+            throw new NotImplementedException(v);
         }
 
         public enum TimeOfDay
