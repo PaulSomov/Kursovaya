@@ -1,0 +1,61 @@
+﻿@model IEnumerable<KR1.Models.Application>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Оформление новой заявки</h1>
+    <div>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>Имя:</td>
+                    <td><input type="text" name="FirstName" /> </td>
+                </tr>
+                <tr>
+                    <td>Фамилия:</td>
+                    <td><input type="text" name="LastName" /></td>
+                </tr>
+                <tr>
+                    <td>Дата рождения:</td>
+                    <td><input type="date" name="DateOfBirth" /></td>
+                </tr>
+                <tr>
+                    <td>Пол:</td>
+                    <td><input type="text" name="Gender" /></td>
+                </tr>
+                <tr>
+                    <td>Адрес:</td>
+                    <td><input type="text" name="Address" /></td>
+                </tr>
+                <tr>
+                    <td>Номер телефона:</td>
+                    <td><input type="text" name="PhoneNumber" /></td>
+                </tr>
+                <tr>
+                    <td>Электронная почта:</td>
+                    <td><input type="text" name="Email" /></td>
+                </tr>
+                <tr><td><input type="submit" value="Создать новую заявку" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

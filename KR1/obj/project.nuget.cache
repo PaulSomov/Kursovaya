@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1VzhQUXKHN3vHN+/uZZQ3apQv+9vgtGVCbp/OjlELFFXXY/ligt/I8jQE6f9Zy+W77NzoSLJaU2Dc89kRwItWg==",
+  "dgSpecHash": "M6aQ3pKHkjNnG5JY/Eexzgr3rf9P2DljHf8ca/KoOBDEw5mEttRitGZ9h2o0HT2ZTBHe042rZl2qyZg2VJWbIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pavel\\source\\repos\\KR1\\KR1\\KR1.csproj",
+  "projectFilePath": "C:\\Users\\pavel\\source\\repos\\Kursovaya\\KR1\\KR1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pavel\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\pavel\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
