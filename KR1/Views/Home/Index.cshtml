@@ -19,6 +19,29 @@
             background-color: #dddddd;
         }
     </style>
+    <script>
+        function confirmDelete() {
+            var result = confirm("Вы действительно хотите удалить заявку?");
+            if (result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function confirmEdit() {
+            var result = confirm("Вы хотите подтвердить заявку?");
+            if (result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+            function setConfirmEditResult(event) {
+                var result = confirmEdit();
+                document.getElementById("confirmEditResult").value = result.toString();
+                return true;
+            }
+    </script>
 </head>
 <body>
     <h1>Заявки</h1>
@@ -35,6 +58,9 @@
             <th>Почта</th>
             <th>Дата заявки</th>
             <th>Статус</th>
+            <th>Удалить</th>
+            <th>Подтвердить заявку</th>
+            <th>Отменить заявку</th>
         </tr>
         @foreach (var application in Model)
         {
@@ -49,12 +75,30 @@
                 <td>@application.Email</td>
                 <td>@application.ApplicationDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
                 <td>@application.Status</td>
+                <td>
+                    <form method="post" action="/Home/Delete_New_Application/@application.ID" onsubmit="return confirmDelete()">
+                        <input type="submit" value="Удалить заявку" />
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/Home/Edit_New_Application/@application.ID">
+                        <input type="hidden" name="confirmEditResult" value="true" />
+                        <input type="submit" value="Подтвердить заявку" />
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/Home/Edit_New_Application/@application.ID">
+                        <input type="hidden" name="confirmEditResult" value="false" />
+                        <input type="submit" value="Отменить заявку" />
+                    </form>
+                </td>
+
             </tr>
         }
     </table>
     <br />
     <br />
-    <form action="~/Home/Create_New_Application/">
+    <form method="get" action="/Home/Create_New_Application">
         <input type="submit" value="Создать новую заявку" />
     </form>
 </body>
